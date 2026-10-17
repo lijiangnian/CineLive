@@ -1,0 +1,20 @@
+// Optional build-time mirrors, including the composite player's build logic.
+// Use with -I gradle/china-mirror.init.gradle. No runtime traffic uses these.
+def mirrors = { repositories ->
+    repositories.all { repository ->
+        if (repository instanceof org.gradle.api.artifacts.repositories.MavenArtifactRepository
+                && repository.url.host in ['repo.maven.apache.org', 'repo1.maven.org']) {
+            repository.url = 'https://maven.aliyun.com/repository/central'
+        }
+    }
+    repositories.maven { url = 'https://maven.aliyun.com/repository/google' }
+    repositories.maven { url = 'https://maven.aliyun.com/repository/central' }
+    repositories.maven { url = 'https://maven.aliyun.com/repository/gradle-plugin' }
+}
+gradle.beforeSettings { settings -> mirrors(settings.pluginManagement.repositories) }
+gradle.settingsEvaluated { settings -> mirrors(settings.dependencyResolutionManagement.repositories) }
+gradle.beforeProject { project ->
+    mirrors(project.buildscript.repositories)
+    // The application uses settings repositories with FAIL_ON_PROJECT_REPOS.
+    if (project.rootProject.name != 'CineShelf') mirrors(project.repositories)
+}

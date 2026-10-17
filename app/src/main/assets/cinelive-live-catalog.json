@@ -1,0 +1,54 @@
+{
+  "checked_at": "2026-10-13T21:54:48.621872+00:00",
+  "scope": "sample_media_packets_not_all_channels_or_home_network",
+  "sources": [
+    {
+      "id": "live-0",
+      "name": "iptv-org 中文频道",
+      "urls": [
+        "https://iptv-org.github.io/iptv/languages/zho.m3u"
+      ],
+      "note": "媒体抽测通过 · 备用线路须在本机验证"
+    },
+    {
+      "id": "live-1",
+      "name": "iptv-org 新闻分类",
+      "urls": [
+        "https://iptv-org.github.io/iptv/categories/news.m3u"
+      ],
+      "note": "媒体抽测通过 · 备用线路须在本机验证"
+    },
+    {
+      "id": "live-3",
+      "name": "YueChan GNTV",
+      "urls": [
+        "https://raw.githubusercontent.com/YueChan/Live/main/GNTV.m3u"
+      ],
+      "note": "媒体抽测通过 · 备用线路须在本机验证"
+    },
+    {
+      "id": "live-tested-3",
+      "name": "Free-TV 公共电视",
+      "urls": [
+        "https://raw.githubusercontent.com/Free-TV/IPTV/master/playlist.m3u8"
+      ],
+      "note": "媒体抽测通过 · 备用线路须在本机验证"
+    },
+    {
+      "id": "live-tested-4",
+      "name": "范明明 IPv6",
+      "urls": [
+        "https://live.fanmingming.com/tv/m3u/ipv6.m3u"
+      ],
+      "note": "部分频道需要 IPv6 · 备用线路须在本机验证"
+    },
+    {
+      "id": "live-tested-5",
+      "name": "Guovin 公共输出",
+      "urls": [
+        "https://raw.githubusercontent.com/Guovin/iptv-api/gd/output/result.m3u"
+      ],
+      "note": "媒体抽测通过 · 备用线路须在本机验证"
+    }
+  ]
+}

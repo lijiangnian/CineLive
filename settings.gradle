@@ -1,0 +1,56 @@
+pluginManagement {
+    repositories {
+        if (providers.gradleProperty('chinaMavenMirror').getOrElse('false').toBoolean()) {
+            maven { url = 'https://maven.aliyun.com/repository/google' }
+            maven { url = 'https://maven.aliyun.com/repository/central' }
+            maven { url = 'https://maven.aliyun.com/repository/gradle-plugin' }
+        }
+        gradlePluginPortal()
+        google()
+        mavenCentral()
+    }
+}
+
+plugins {
+    id "org.gradle.toolchains.foojay-resolver-convention" version "1.0.0"
+}
+
+dependencyResolutionManagement {
+    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
+    repositories {
+        if (providers.gradleProperty('chinaMavenMirror').getOrElse('false').toBoolean()) {
+            maven { url = 'https://maven.aliyun.com/repository/google' }
+            maven { url = 'https://maven.aliyun.com/repository/central' }
+        }
+        google()
+        maven {
+            url = 'https://jitpack.io'
+            content { includeGroupByRegex('com\\.github\\.(?!bumptech).*') }
+        }
+        mavenCentral {
+            content { excludeGroupByRegex('com\\.github\\.(?!bumptech).*') }
+        }
+        flatDir { dirs "$rootDir/app/libs" }
+    }
+}
+
+include ':app'
+include ':catvod'
+include ':chaquo'
+include ':quickjs'
+rootProject.name = "CineShelf"
+
+// FongMi's player extends Media3; stock Maven Media3 is not API-compatible.
+def mediaDir = providers.gradleProperty('fongmiMediaDir').orNull
+if (mediaDir) {
+    includeBuild(file(mediaDir)) {
+        dependencySubstitution {
+            ['common', 'container', 'database', 'datasource', 'datasource-okhttp', 'datasource-rtmp',
+             'decoder', 'decoder-ffmpeg', 'decoder-mpegh', 'effect', 'exoplayer', 'exoplayer-dash',
+             'exoplayer-hls', 'exoplayer-rtsp', 'exoplayer-smoothstreaming', 'extractor',
+             'mpvplayer', 'session', 'ui', 'ui-danmaku'].each { name ->
+                substitute module("androidx.media3:media3-${name}") using project(":lib-${name}")
+            }
+        }
+    }
+}

@@ -1,0 +1,19 @@
+CineLive maintenance-only native fetcher
+
+Pinned upstreams:
+- Xray-core v1.260327.0 / release v26.3.27, commit d2758a023cd7f4174a5a5fa4ff66e487d4342ba0 (MPL-2.0).
+- x/mobile v0.0.0-20261011034528-197770444867.
+- Go 1.27.2, Android NDK 28.2.13676358, min API 24, ARM32/ARM64.
+
+Rebuild: put Go, gomobile/gobind output bin, and JDK 21 bin on PATH; set ANDROID_HOME and ANDROID_NDK_HOME, then run bash maintenance-core/build.sh from the project root.
+Bundled app/libs/maintenance-core.aar contains code only, no household node profile.
+The local third_party/xray copy carries one marked change in transport/internet/reality/reality.go: failed Reality authentication closes the connection immediately, bypassing the upstream optional decoy crawler. All other upstream functionality is unchanged. Original copyright and license files are retained.
+
+This library opens no listener and has no VPN interface. Its subscription Fetch entry point accepts only exact URLs in allowed.go, only GET, HTTPS, at most 4 MiB and 25 seconds. Redirects must remain on the same HTTPS host and resolve to an allowlisted configuration. Native checks remain enforced independently of Java. No system DNS/proxy is changed.
+
+Private APK builds add an external asset directory using -PmaintenancePrivateAssetsDir=/private/path. Only family-maintenance.txt belongs in that directory. Do not place it in source control or source archives. Default builds omit the node. Private APKs contain the profile and must remain private; embedding is not encryption.
+
+Go tests cover exact URL isolation, invalid profiles, redirects, configuration without inbounds, and starting/stopping the core. Set MAINTENANCE_PROFILE_TEST_FILE to a private file path to validate profile structure without connecting. Neither these tests nor desktop media samples establish connectivity on a user's home ISP.
+
+0.1.8: NewUpdateDownload is a separate, cancelable capability for lijiangnian/CineLive release manifest/APK files only. Requests start on exact github.com release paths; redirects may reach GitHub release-assets CDN. Other repositories, plugins, arbitrary GitHub pages and HTTP are rejected. APKs stream to temporary files (512 MiB ceiling, 180 s deadline), manifests are capped at 256 KiB. Java performs byte hash and Android signer/package/device/version verification before installation. Existing subscription scope is unchanged.
+Profile migration stores the private asset in app-private preferences on the initial private bootstrap install. Later public APKs reuse local configuration. No node is published in public binaries or source.

@@ -1,0 +1,22 @@
+// FongMi/media targets Gradle 9.1. The host uses 9.7, whose embedded Kotlin
+// pins annotations 13.0 while AGP requires 23.0. Align only this build-time jar.
+gradle.beforeProject { project ->
+    if (project.rootProject.name in ['androidx.media3', 'media3-build-logic']) {
+        def alignAgp = { configuration ->
+            configuration.resolutionStrategy.eachDependency { details ->
+                if (details.requested.group == 'com.android.tools.build'
+                        && details.requested.name in ['gradle', 'gradle-api']) {
+                    details.useVersion('9.3.1')
+                    details.because('Composite builds must use the same AGP version as CineShelf')
+                }
+            }
+        }
+        project.configurations.configureEach(alignAgp)
+        project.buildscript.configurations.configureEach(alignAgp)
+    }
+    if (project.rootProject.name == 'androidx.media3') {
+        project.buildscript.configurations.configureEach {
+            resolutionStrategy.force('org.jetbrains:annotations:23.0.0')
+        }
+    }
+}

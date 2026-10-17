@@ -1,0 +1,16 @@
+plugins {
+    id 'groovy'
+}
+
+repositories {
+    if (providers.gradleProperty('chinaMavenMirror').getOrElse('false').toBoolean()) {
+        maven { url = 'https://maven.aliyun.com/repository/central' }
+    }
+    mavenCentral()
+}
+
+dependencies {
+    implementation gradleApi()
+    implementation localGroovy()
+    implementation libs.commons.compress
+}

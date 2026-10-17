@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge xmlns:android="http://schemas.android.com/apk/res/android">
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/navVod"
+        style="@style/TvNavigationButton"
+        android:nextFocusLeft="@id/navVod"
+        android:nextFocusRight="@id/navLive"
+        android:text="@string/home_vod" />
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/navLive"
+        style="@style/TvNavigationButton"
+        android:layout_marginStart="8dp"
+        android:nextFocusLeft="@id/navVod"
+        android:nextFocusRight="@id/navSettings"
+        android:text="@string/home_live" />
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/navSettings"
+        style="@style/TvNavigationButton"
+        android:layout_marginStart="8dp"
+        android:nextFocusLeft="@id/navLive"
+        android:nextFocusRight="@id/navSearch"
+        android:text="@string/home_setting" />
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/navSearch"
+        style="@style/TvNavigationButton"
+        android:layout_marginStart="8dp"
+        android:text="@string/home_search" />
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/navKeep"
+        style="@style/TvNavigationButton"
+        android:layout_marginStart="8dp"
+        android:text="@string/home_keep" />
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/navPush"
+        style="@style/TvNavigationButton"
+        android:layout_marginStart="8dp"
+        android:text="@string/home_push" />
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/navSources"
+        style="@style/TvNavigationButton"
+        android:layout_marginStart="8dp"
+        android:text="@string/home_sources" />
+</merge>

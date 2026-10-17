@@ -1,0 +1,12 @@
+**/build/
+.gradle/
+.idea/
+.vscode/
+local.properties
+*.jks
+*.keystore
+family-maintenance.txt
+.env
+__pycache__/
+Release/
+*.apk

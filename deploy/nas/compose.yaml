@@ -1,0 +1,15 @@
+services:
+  cinelive-updates:
+    image: nginx:stable-alpine@sha256:970364228b1e4f932abc22d321932816782cca8a20b85a77552a7cfe9acfb3b5
+    restart: unless-stopped
+    ports:
+      - "192.168.31.67:18080:8080"
+    volumes:
+      - ./www:/usr/share/nginx/html:ro
+      - ./default.conf:/etc/nginx/conf.d/default.conf:ro
+    read_only: true
+    tmpfs:
+      - /var/cache/nginx
+      - /var/run
+    security_opt:
+      - no-new-privileges:true

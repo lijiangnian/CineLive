@@ -1,0 +1,5 @@
+<resources>
+    <color name="tv_surface">#181818</color>
+    <color name="tv_focus_surface">#164F48</color>
+    <color name="tv_focus_border">#66FFE1</color>
+</resources>

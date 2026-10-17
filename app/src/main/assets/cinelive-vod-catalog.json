@@ -1,0 +1,127 @@
+{
+  "checked_at": "2026-10-13T21:29:37.776874+00:00",
+  "scope": "document_structure_only",
+  "sources": [
+    {
+      "id": "wangerxiao",
+      "name": "王二小",
+      "urls": [
+        "https://d.kstore.dev/download/9280/wex.json",
+        "https://9280.kstore.vip/aiwex.json"
+      ],
+      "note": "选择后检查并启用"
+    },
+    {
+      "id": "4k",
+      "name": "4K小盒子",
+      "urls": [
+        "http://xhztv.top/xhz"
+      ],
+      "note": "选择后检查并启用"
+    },
+    {
+      "id": "repo-0",
+      "name": "饭太硬(fty)",
+      "urls": [
+        "https://raw.githubusercontent.com/qist/tvbox/master/fty.json"
+      ],
+      "note": "GitHub 托管 · 网络可达后启用"
+    },
+    {
+      "id": "repo-3",
+      "name": "OK影视(2hacc)",
+      "urls": [
+        "https://raw.githubusercontent.com/2hacc/TVBox/main/oktv.json"
+      ],
+      "note": "GitHub 托管 · 网络可达后启用"
+    },
+    {
+      "id": "repo-8",
+      "name": "香雅情(XYQ)",
+      "urls": [
+        "https://raw.githubusercontent.com/xyq254245/xyqonlinerule/main/XYQTVBox.json"
+      ],
+      "note": "GitHub 托管 · 网络可达后启用"
+    },
+    {
+      "id": "repo-10",
+      "name": "月光宝盒(max)",
+      "urls": [
+        "https://raw.githubusercontent.com/guot55/yg/main/max.json"
+      ],
+      "note": "GitHub 托管 · 网络可达后启用"
+    },
+    {
+      "id": "repo-13",
+      "name": "Txtv(0326)",
+      "urls": [
+        "https://raw.githubusercontent.com/txtvv/txtv/main/tvbox/0326.json"
+      ],
+      "note": "GitHub 托管 · 网络可达后启用"
+    },
+    {
+      "id": "repo-15",
+      "name": "肥猫(frjbox)",
+      "urls": [
+        "https://raw.githubusercontent.com/kunkka1986/my.img/main/frjbox.json"
+      ],
+      "note": "社区镜像 · 选择后检查并启用"
+    },
+    {
+      "id": "repo-16",
+      "name": "hackyjso(jzy)",
+      "urls": [
+        "https://raw.githubusercontent.com/hackyjso/box/main/jzy.txt"
+      ],
+      "note": "GitHub 托管 · 网络可达后启用"
+    },
+    {
+      "id": "repo-17",
+      "name": "noimank 多仓",
+      "urls": [
+        "https://raw.githubusercontent.com/noimank/tvbox/main/tvboxmuti.json"
+      ],
+      "note": "GitHub 托管 · 网络可达后启用"
+    },
+    {
+      "id": "repo-18",
+      "name": "CatVod 官方 Spider 配置",
+      "urls": [
+        "https://raw.githubusercontent.com/FongMi/CatVodSpider/main/json/config.json"
+      ],
+      "note": "GitHub 托管 · 网络可达后启用"
+    },
+    {
+      "id": "mirror-feimao",
+      "name": "肥猫镜像",
+      "urls": [
+        "https://raw.githubusercontent.com/Lightconer/tvbox-ysc-config/main/output/feimao.json"
+      ],
+      "note": "社区镜像 · 选择后检查并启用"
+    },
+    {
+      "id": "mirror-wangerxiao",
+      "name": "王二小镜像",
+      "urls": [
+        "https://raw.githubusercontent.com/Lightconer/tvbox-ysc-config/main/output/wangerxiao.json"
+      ],
+      "note": "社区镜像 · 选择后检查并启用"
+    },
+    {
+      "id": "mirror-ouge",
+      "name": "讴歌缓存镜像",
+      "urls": [
+        "https://raw.githubusercontent.com/Lightconer/tvbox-ysc-config/main/output/ouge.json"
+      ],
+      "note": "社区镜像 · 选择后检查并启用"
+    },
+    {
+      "id": "mirror-4k",
+      "name": "4K小盒子镜像",
+      "urls": [
+        "https://raw.githubusercontent.com/Lightconer/tvbox-ysc-config/main/output/4k.json"
+      ],
+      "note": "社区镜像 · 选择后检查并启用"
+    }
+  ]
+}

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="home_sources">源维护</string>
+    <string name="source_check">检查订阅更新</string>
+    <string name="source_checking">正在检查…</string>
+    <string name="source_maintenance_note">后台按系统调度检查点播、直播订阅与当前直播列表。主订阅失败时尝试配置的备用地址，全部失败保留上次缓存。新配置在下次加载时使用，不打断播放。这里只验证订阅内容，节目能否播放仍以实际播放为准。</string>
+    <string name="source_back">返回</string>
+</resources>
